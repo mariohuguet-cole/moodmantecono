@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary: var(--on-primary);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-error: var(--error);
+
+  --font-headline: var(--font-headline-active), serif;
+  --font-body: var(--font-body-active), sans-serif;
+  --font-label: var(--font-body-active), sans-serif;
+}
+
+@layer base {
+  :root, .light {
+    --bg: #faf9f6;
+    --surface: #faf9f6;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f5f4f1;
+    --surface-container: #ebeae6;
+    --surface-container-high: #e2e1dd;
+    --surface-container-highest: #dad9d5;
+    --primary: #c29129;
+    --primary-container: #efc472;
+    --on-primary: #ffffff;
+    --on-surface: #1e1b16;
+    --on-surface-variant: #6b6251;
+    --outline: #9a907a;
+    --outline-variant: #d5cfc4;
+    --error: #ba1a1a;
+    
+    --font-headline-active: var(--font-headline);
+    --font-body-active: var(--font-body);
+  }
+
+  .dark {
+    --bg: #131313;
+    --surface: #131313;
+    --surface-container-lowest: #0e0e0e;
+    --surface-container-low: #1c1b1b;
+    --surface-container: #201f1f;
+    --surface-container-high: #2a2a2a;
+    --surface-container-highest: #353534;
+    --primary: #ffe2b3;
+    --primary-container: #efc472;
+    --on-primary: #412d00;
+    --on-surface: #e5e2e1;
+    --on-surface-variant: #d1c5ad;
+    --outline: #9a907a;
+    --outline-variant: #4e4634;
+    --error: #ffb4ab;
+  }
+
+  .font-modern {
+    --font-headline-active: var(--font-modern);
+    --font-body-active: var(--font-modern);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: color-mix(in srgb, var(--surface-container-highest) 60%, transparent);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--outline-variant);
+    border-radius: 10px;
+  }
+}
