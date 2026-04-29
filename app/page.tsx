@@ -22,42 +22,42 @@ const MOODS: {
   color: string;
   bg: string;
 }[] = [
-  {
-    id: "incredible",
-    emoji: "😄",
-    label: "Increíble",
-    color: "text-[#4ade80]",
-    bg: "bg-[#4ade80]",
-  },
-  {
-    id: "good",
-    emoji: "😊",
-    label: "Bien",
-    color: "text-[#38bdf8]",
-    bg: "bg-[#38bdf8]",
-  },
-  {
-    id: "normal",
-    emoji: "😐",
-    label: "Normal",
-    color: "text-[#fbbf24]",
-    bg: "bg-[#fbbf24]",
-  },
-  {
-    id: "bad",
-    emoji: "😞",
-    label: "Mal",
-    color: "text-[#fb923c]",
-    bg: "bg-[#fb923c]",
-  },
-  {
-    id: "horrible",
-    emoji: "😢",
-    label: "Horrible",
-    color: "text-[#f87171]",
-    bg: "bg-[#f87171]",
-  },
-];
+    {
+      id: "increible67",
+      emoji: "😄",
+      label: "Increíble",
+      color: "text-[#4ade80]",
+      bg: "bg-[#4ade80]",
+    },
+    {
+      id: "good",
+      emoji: "😊",
+      label: "Bien",
+      color: "text-[#38bdf8]",
+      bg: "bg-[#38bdf8]",
+    },
+    {
+      id: "normal",
+      emoji: "😐",
+      label: "Normal",
+      color: "text-[#fbbf24]",
+      bg: "bg-[#fbbf24]",
+    },
+    {
+      id: "bad",
+      emoji: "😞",
+      label: "Mal",
+      color: "text-[#fb923c]",
+      bg: "bg-[#fb923c]",
+    },
+    {
+      id: "horrible",
+      emoji: "😢",
+      label: "Horrible",
+      color: "text-[#f87171]",
+      bg: "bg-[#f87171]",
+    },
+  ];
 
 const ENERGIES: { id: Energy; label: string }[] = [
   { id: "low", label: "Baja" },
@@ -82,7 +82,7 @@ const MONTH_NAMES = [
 
 export default function Home() {
   const { entries, saveEntry, getEntry, isLoaded } = useJournal();
-  
+
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   // Form state
@@ -194,13 +194,13 @@ export default function Home() {
           <button className="text-outline hover:text-primary transition-colors">
             <Calendar strokeWidth={1.5} />
           </button>
-          <button 
+          <button
             className="text-outline hover:text-primary transition-colors"
             onClick={() => setIsStatsOpen(true)}
           >
             <LineChart strokeWidth={1.5} />
           </button>
-          <button 
+          <button
             className="text-outline hover:text-primary transition-colors"
             onClick={() => setIsSettingsOpen(true)}
           >
@@ -282,12 +282,11 @@ export default function Home() {
                     }
                     className={`aspect-square flex flex-col items-center justify-center text-xs rounded-lg transition-all relative
                       ${isSelected ? "ring-2 ring-primary ring-offset-2 ring-offset-surface scale-110 z-10 rounded-xl" : "hover:scale-105"}
-                      ${
-                        moodData
-                          ? `${moodData.bg}/20 ${moodData.color} font-bold border border-current/30`
-                          : isSelected
-                            ? "bg-primary text-on-primary font-black shadow-xl"
-                            : "bg-surface-container text-on-surface-variant/50 hover:bg-surface-container-high"
+                      ${moodData
+                        ? `${moodData.bg}/20 ${moodData.color} font-bold border border-current/30`
+                        : isSelected
+                          ? "bg-primary text-on-primary font-black shadow-xl"
+                          : "bg-surface-container text-on-surface-variant/50 hover:bg-surface-container-high"
                       }
                     `}
                   >
@@ -314,7 +313,7 @@ export default function Home() {
           </div>
 
           <div className="p-8 mt-auto border-t border-outline-variant/15">
-            <button 
+            <button
               onClick={() => setIsStatsOpen(true)}
               className="w-full py-4 rounded-xl border border-outline-variant/15 flex items-center justify-center gap-3 text-on-surface-variant font-label hover:bg-surface-container-high transition-all active:scale-95 group"
             >
@@ -424,10 +423,9 @@ export default function Home() {
                         type="button"
                         onClick={() => setSelectedEnergy(e.id)}
                         className={`py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all active:scale-95 border
-                          ${
-                            selectedEnergy === e.id
-                              ? "bg-surface-container-highest text-primary border-primary/20"
-                              : "border-outline-variant/15 text-outline hover:border-primary/40 hover:text-primary"
+                          ${selectedEnergy === e.id
+                            ? "bg-surface-container-highest text-primary border-primary/20"
+                            : "border-outline-variant/15 text-outline hover:border-primary/40 hover:text-primary"
                           }
                         `}
                       >
@@ -483,10 +481,9 @@ export default function Home() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.95 }}
                     className={`w-full py-5 rounded-2xl font-bold uppercase tracking-[0.3em] text-sm shadow-xl transition-all relative overflow-hidden
-                      ${
-                        !selectedMood || !selectedEnergy
-                          ? "bg-surface-container-highest text-outline cursor-not-allowed"
-                          : "bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-primary/10 hover:shadow-primary/20"
+                      ${!selectedMood || !selectedEnergy
+                        ? "bg-surface-container-highest text-outline cursor-not-allowed"
+                        : "bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-primary/10 hover:shadow-primary/20"
                       }
                     `}
                   >
